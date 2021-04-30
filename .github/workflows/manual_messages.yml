@@ -10,7 +10,6 @@ on:
         description: 'Person to greet'
         default: 'IMS!'
         required: true
-  pull_request:
     
 
 jobs:
