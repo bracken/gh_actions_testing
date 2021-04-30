@@ -5,6 +5,8 @@ name: Greeting and debug info
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
+  pull_request:
+  pull_request_review_comment:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
@@ -38,3 +40,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Echo the super secret
+        run: echo "${{ secrets.SUPER_SECRET }}"
